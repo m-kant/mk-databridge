@@ -5,14 +5,14 @@ Databridge is a serialization jQuery plugin to read data from forms, and to set 
 Supports nested objects,
 boolean and array checkboxes,
 on fly data formatting and conversion.
-Works with any elements with attributes name or data-name, not only inputs.
+Works with any elements with attributes 'name' or 'data-name', including non-input elements.
 
 [Demo](http://mkant.ru/mink-js/mk-databridge)
 
 Installation
 ------------
 
-Include script and style sheet into your page:
+Include script into your page:
 ```HTML
 <script src="path/to/plugin/mk-databridge.min.js" ></script>
 ```
