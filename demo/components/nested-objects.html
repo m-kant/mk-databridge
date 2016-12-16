@@ -1,0 +1,65 @@
+
+<div class='row'>
+<div class='col-sm-5'>
+	<form id="nestedFormEl" class='well wide'>
+		<div class='well'>
+			person <br />
+			<p>
+				person.name:<br />
+				<input class='wide form-control' type='text' name="person.name" value="Bobo">
+			</p>
+
+			person.address:<br />
+			<div class='well'>
+				<p>
+					person[address].street<br />
+					<input class='wide form-control' type='text' name="person[address].street" value="Elm street">
+				</p>
+				<p>
+					person[address][house]<br />
+					<input class='wide form-control' type='text' name="person[address][house]" value="6">
+				</p>
+
+			</div>
+
+			person.phones<br />
+			<div class='well'>
+				<p>
+					person.phones.0<br />
+					<input class='wide form-control' type='text' name="person.phones.0" value="222">
+				</p>
+				<p>
+					person.phones.1<br />
+					<input class='wide form-control' type='text' name="person.phones.1" value="333">
+				</p>
+
+			</div>
+
+		</div>
+
+	</form>
+</div><!-- .col-sm-5 -->
+
+<div class='col-sm-2 central-controls'>
+	<a class='btn btn-default wide' onclick="readData(nestedFormEl,nestedJsonEl)">get &rsaquo;</a>
+	<a class='btn btn-default wide' onclick="setData(nestedJsonEl,nestedFormEl)">&lsaquo; set</a>
+</div><!-- .col-sm-2 -->
+
+
+<div class='col-sm-5'>
+	<textarea id='nestedJsonEl' class='wide form-control' style='height:300px;'>
+{
+  "person":{
+    "name":"Dudu",
+    "address":{
+      "street":"Pine street",
+      "house":4
+    },
+    "phones":[
+      "999"
+    ]
+  }
+}
+	</textarea>
+</div><!-- .col-sm-5 -->
+</div><!-- .row -->

@@ -1,0 +1,28 @@
+
+.toggler{
+	border: 1px solid #ddd;
+	border-radius:3px;
+	padding:5px;
+}
+.toggler .toggler-body{
+	display:none;
+}
+.toggler.visible .toggler-body{
+	display:block;
+}
+.toggler-trigger{
+	cursor:pointer;
+}
+.toggler .toggler-trigger:before{
+	content: '+';
+	margin-right: 5px;
+	padding:  0px 2px 0px 2px;
+	border: 1px solid #000;
+}
+
+.toggler .toggler-trigger:before{
+	content: '+';
+}
+.toggler.visible .toggler-trigger:before{
+	content: '-';
+}

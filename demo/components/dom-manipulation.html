@@ -1,0 +1,50 @@
+<div class='row'>
+
+<div class='col-sm-5'>
+	<form id="domFormEl" class='well wide'>
+		<p>
+			value 1:<br />
+			<input class='wide form-control' type='text' name="v1" data-map="rateMap" value="2">
+		</p>
+		<p>
+			value 2<br />
+			<input class='wide form-control' type='text' name="v2" data-map="rateMap" value="7">
+		</p>
+	</form>
+</div><!-- .col-sm-5 -->
+
+
+<div class='col-sm-2 central-controls'>
+	<button class='btn btn-default' onclick="readData(domFormEl,domJsonEl)">get &rsaquo;</button>
+	<button class='btn btn-default' onclick="setData(domJsonEl,domFormEl)">&lsaquo; set</button>
+</div><!-- .col-sm-2 -->
+
+
+<div class='col-sm-5'>
+	0-3 - red, 4-6 - yellow, 7+ green
+<textarea class='wide form-control' id='domJsonEl' style='height:120px;'>
+{
+	"v1":5,
+	"v2":1
+}
+</textarea>
+</div><!-- .col-sm-5 -->
+
+</div><!-- .row -->
+
+		<div class="toggler">
+			<div class="toggler-trigger" onclick="toggler.toggle(this)">code of mapper</div>
+			<div class="toggler-body">
+				<pre>
+rateMap = function(val,mode){
+	if(val < 4){
+		this.style.backgroundColor = '#FCDEE6';
+	}else if(val < 7){
+		this.style.backgroundColor = '#FCFCD4';
+	}else{
+		this.style.backgroundColor = '#CEF2CE';
+	}
+	return val;
+}</pre>
+			</div>
+		</div>

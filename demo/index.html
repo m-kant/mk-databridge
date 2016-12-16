@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+	<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+
+	<!-- third-part libs -->
+	<script   src="https://code.jquery.com/jquery-2.2.3.min.js" ></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script charset='UTF-8' src='components/date.format.js'></script>
+
+	<!-- MK libraries -->
+	<script charset='UTF-8' src='../build/jquery.mk-databridge.js'></script>
+	<script charset='UTF-8' src='components/mk.utils.time.js'></script>
+
+	<!-- local -->
+	<link href="components/demo.css" rel="stylesheet">
+	<script src='components/demo.js'></script>
+	<link href="components/toggler.css" rel="stylesheet">
+	<script src='components/toggler.js'></script>
+
+	<title>databridge Demo</title>
+</head>
+
+<body>
+<div class="container">
+	<div id="topNavEl"></div>
+
+	<h1>jQuery.databridge</h1>
+	<p>
+		Databridge is a serialization jQuery plugin to read data from forms, and to set data to forms.
+		Supports nested objects,
+		boolean and array checkboxes,
+		on fly data formatting and conversion.
+		Works with any elements with attributes <span class="badge">name</span> or <span class="badge">data-name</span>, not only inputs.
+	</p>
+	<div>
+		<a class="btn btn-default" href="https://github.com/m-kant/mk-databridge">Download from GIT Hub</a>
+		<a class="btn btn-default" href="https://www.npmjs.com/package/mk-databridge">Download as NPM package</a>
+	</div>
+	<hr />
+	<h2>Installation</h2>
+		<p>Include script into you page:</p>
+		<pre>&#60;script src="path/to/plugin/mk-databridge.min.js" type="text/javascript">&#60;/script></pre>
+
+
+	<h2>Basic usage</h2>
+	<p>To set data call databridge with data object</p>
+	<pre>$('.form-container').databridge(dataObject);</pre>
+	<p>To get data call databridge with no arguments</p>
+	<pre>var dataObject = $('.form-container').databridge();</pre>
+	<div id="basicUsageEl"></div>
+	<script>$(basicUsageEl).load('components/basic-usage.html')</script>
+	<hr />
+
+
+	<h2>Data mappers</h2>
+	<p>If you need to convert your data for view, for example, to show timestamp as date string.
+		You can point to mapper function in html attribute <span class="badge">data-map="my.mapper.fuction"</span>.
+		Mapper function has to return converted value. It takes two arguments: original value and
+		mode (it can be 'set' or 'get'), 'this' variable is set to input element.
+	</p>
+	<div id="dataMappersEl"></div>
+	<script>$(dataMappersEl).load('components/data-mappers.html')</script>
+	<hr />
+
+
+	<h2>Data mappers & DOM manipulation</h2>
+	<p>
+		Mapper function gets <span class="badge">this</span> variable set to
+		input element, so you can control it from mapper for additional effects.
+	</p>
+	<div id="domManEl"></div>
+	<script>$(domManEl).load('components/dom-manipulation.html')</script>
+
+
+	<h3>Effects with mappers</h3>
+	<p>
+		You can create special views this way.
+	</p>
+	<div id="compMappersEl"></div>
+	<script>$(compMappersEl).load('components/effects-w-mappers.html')</script>
+	<hr />
+
+
+	<h2>Nested objects</h2>
+	<p>
+		You can use nested objects with either 'dot'-notation or 'square-brackets'-notation.
+	</p>
+	<div id="nestedEl"></div>
+	<script>$(nestedEl).load('components/nested-objects.html')</script>
+	<hr />
+
+	<div>
+		<a class="btn btn-default" href="https://github.com/m-kant/mk-databridge">Download from GIT Hub</a>
+		<a class="btn btn-default" href="https://www.npmjs.com/package/mk-databridge">Download as NPM package</a>
+	</div>
+	<hr />
+
+</div><!--.container-->
+</body>
+</html>

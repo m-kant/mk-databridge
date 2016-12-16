@@ -1,0 +1,116 @@
+<div class='row'>
+	<div class='col-sm-5'>
+		<form id="basicFormEl" class="well wide">
+			<p>id is: <b><span data-name="id">unknown</span></b></p>
+			<p>
+				name:
+				<input class='form-control' name="name" value="Commo" style='display:inline-block'>
+			</p>
+
+			<p>
+				choose age:
+				<select name="agegroup" style='display:inline-block'>
+					<option></option>
+					<option>20+</option>
+					<option>30+</option>
+					<option selected>40+</option>
+					<option>50+</option>
+				</select>
+			</p>
+
+			<p>
+				district:<br>
+				<label><input type="radio" name="district" value="upper" /> upper</label>
+				<label><input type="radio" name="district" value="lower"  /> lower</label>
+				<label><input type="radio" name="district" value="middle" /> middle</label>
+			</p>
+
+			<p>
+				hobby (array checkboxes):<br>
+				<label><input type="checkbox" name="hobby" value="sports" /> sports</label>
+				<label><input type="checkbox" name="hobby" value="cinema" checked /> cinema</label>
+				<label><input type="checkbox" name="hobby" value="books" checked /> books</label>
+			</p>
+
+
+			<p>
+				is a good person (boolean checkbox):<br>
+				<label><input type="checkbox" name="goodPerson" /> yes</label>
+			</p>
+
+			<p>
+				comment:<br>
+				<textarea class='wide form-control' name='comment' style='height:50px;'>some comment here</textarea>
+			</p>
+
+		</form>
+	</div><!-- .col-sm-5 -->
+	<div class='col-sm-2 central-controls'>
+		<button class="btn btn-default" onclick="readData(basicFormEl,basicJsonEl)">get &rsaquo;</button>
+		<button class="btn btn-default" onclick="setData(basicJsonEl,basicFormEl)">&lsaquo; set</button>
+	</div><!-- .col-sm-2 -->
+	<div class='col-sm-5'>
+		<textarea id='basicJsonEl' class='wide form-control' style='height:300px;'>
+{
+	"id":"1122",
+	"name":"Nemo",
+	"agegroup":"30+",
+	"district":"",
+	"hobby":[
+		"sports",
+		"cinema"
+	],
+	"comment":"some words"
+}
+		</textarea>
+	</div><!-- .col-sm-5 -->
+
+</div>
+
+<div class="toggler">
+	<div class="toggler-trigger" onclick="toggler.toggle(this)">HTML code</div>
+	<div class="toggler-body">
+		<pre style="height: 250px;">
+&#60;form id="basicFormEl" class="well wide">
+  &#60;p>id is: &#60;b>&#60;span data-name="id">unknown&#60;/span>&#60;/b>&#60;/p>
+  &#60;p>
+    name:
+    &#60;input class='form-control' name="name" value="Commo" style='display:inline-block'>
+  &#60;/p>
+  &#60;p>
+    choose age:
+    &#60;select name="agegroup" style='display:inline-block'>
+      &#60;option>&#60;/option>
+      &#60;option>20+&#60;/option>
+      &#60;option>30+&#60;/option>
+      &#60;option selected>40+&#60;/option>
+      &#60;option>50+&#60;/option>
+    &#60;/select>
+  &#60;/p>
+  &#60;p>
+    district:&#60;br>
+    &#60;label>&#60;input type="radio" name="district" value="upper" /> upper&#60;/label>
+    &#60;label>&#60;input type="radio" name="district" value="lower"  /> lower&#60;/label>
+    &#60;label>&#60;input type="radio" name="district" value="middle" /> middle&#60;/label>
+  &#60;/p>
+  &#60;p>
+    hobby (array checkboxes):&#60;br>
+    &#60;label>&#60;input type="checkbox" name="hobby" value="sports" /> sports&#60;/label>
+    &#60;label>&#60;input type="checkbox" name="hobby" value="cinema" checked /> cinema&#60;/label>
+    &#60;label>&#60;input type="checkbox" name="hobby" value="books" checked /> books&#60;/label>
+  &#60;/p>
+  &#60;p>
+    is a good person (boolean checkbox):&#60;br>
+    &#60;label>&#60;input type="checkbox" name="goodPerson" /> yes&#60;/label>
+  &#60;/p>
+  &#60;p>
+    comment:&#60;br>
+    &#60;textarea class='wide form-control' name='comment' style='height:50px;'>some comment here&#60;/textarea>
+  &#60;/p>
+&#60;/form>
+		</pre>
+
+	</div>
+
+
+</div>

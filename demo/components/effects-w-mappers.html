@@ -1,0 +1,94 @@
+<div class='row'>
+
+<div class='col-sm-5'>
+	<form id="domCompEl" class='well wide'>
+		<div class="rounded-indicator">
+			<div class="val" data-name="degrees" data-mapper="roundControl">0</div>
+			<div class="scale-back"></div>
+			<div class="scale"></div>
+			<div class="pointer"></div>
+		</div>
+	</form>
+</div><!-- .col-sm-5 -->
+
+
+<div class='col-sm-2 central-controls'>
+	<button class='btn btn-default' onclick="readData(domCompEl,domCompJsonEl)">get &rsaquo;</button>
+	<button class='btn btn-default' onclick="setData(domCompJsonEl,domCompEl)">&lsaquo; set</button>
+</div><!-- .col-sm-2 -->
+
+
+<div class='col-sm-5'>
+	change degrees and press "< set" to rotate the pointer
+<textarea class='wide form-control' id='domCompJsonEl' style='height:80px;'>
+{
+	"degrees":100
+}</textarea>
+</div><!-- .col-sm-5 -->
+
+</div><!-- .row -->
+
+<div class="toggler">
+	<div class="toggler-trigger" onclick="toggler.toggle(this)">code of mapper and html markup</div>
+	<div class="toggler-body">
+		<p>HTML</p>
+		<pre>
+&#60;div class="rounded-indicator">
+  &#60;div class="val" data-name="degrees" data-mapper="roundControl">0&#60;/div>
+  &#60;div class="scale-back">&#60;/div>
+  &#60;div class="scale">&#60;/div>
+  &#60;div class="pointer">&#60;/div>
+&#60;/div></pre>
+		<p>CSS</p>
+		<pre style='height: 200px;'>
+.rounded-indicator, .rounded-indicator *{
+	box-sizing: border-box;
+	width: 100px;
+	height: 100px;
+	border-radius:50%;
+}
+.rounded-indicator{
+	position: relative;
+}
+.rounded-indicator *{
+	position: absolute;
+	top:0;
+	left:0;
+}
+.scale-back{
+	border: 4px solid #ddd;
+}
+.val{
+	text-align: center;
+	line-height:100px;
+	font-size: 20pt;
+}
+.scale{
+	border: 2px dotted #555;
+}
+.pointer{
+	transition: transform .3s;
+}
+.pointer:after{
+	content:"";
+	display: block;
+	width:10px;
+	height:10px;
+	position:absolute;
+	top:-4px;
+	left:46px;
+	border-radius:50%;
+	border: 2px solid rgba(0,0,0,0.5);
+	background-color: #ddd;
+}</pre>
+		<p>JavaScript</p>
+		<pre>
+roundControl = function(val,mode){
+  if (!/^\d+$/.test(val))throw new Error('value must be a number');
+  if(mode === 'set'){
+    $(this).siblings( '.pointer' ).css('transform','rotate('+val+'deg)');
+  }
+  return val;
+};</pre>
+	</div>
+</div>
