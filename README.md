@@ -9,7 +9,7 @@ Works with any elements with attributes 'name' or 'data-name', including non-inp
 
 [Demo](http://mkant.ru/mink-js/mk-databridge)
 
-Installation
+Including in browser
 ------------
 
 Include script into your page:

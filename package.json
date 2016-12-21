@@ -1,7 +1,11 @@
 {
-  "author": "mkant",
+  "author": {
+	"name":"mkant",
+	"email":"mkant@list.ru",
+	"url":"http://mkant.ru"
+  },
   "name": "mk-databridge",
-  "description": "Databridge is a serialization jQuery plugin to read/set data to forms. Supports nested objects, boolean and array checkboxes, on fly data formatting, non-input elements.",
+  "description": "A jQuery plugin to read/set data to forms. Supports nested objects, boolean and array checkboxes, on fly data formatting, non-input elements.",
   "keywords": [
     "jquery-plugin",
     "ecosystem:jquery",
@@ -26,7 +30,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/m-kant/mk-databridge"
+    "url": "https://github.com/m-kant/mk-databridge.git"
   },
   "bugs": {
     "url": "https://github.com/m-kant/mk-databridge/issues"
